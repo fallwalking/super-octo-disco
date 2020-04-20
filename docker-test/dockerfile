@@ -1,0 +1,9 @@
+FROM rhel7
+RUN yum -y install oracle-instantclient12.2*
+RUN yum -y install unixODBC
+RUN yum -y install httpd
+RUN yum -y install mod_perl mod_perl-devel
+ADD ./html/* /var/www/html
+ADD ./dat /
+ENTRYPOINT apachectl -D FOREGROUND
+ENV tnsadmin /var/local
