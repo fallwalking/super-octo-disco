@@ -1,3 +1,4 @@
  <?php 
-    print 'Hello World.'
+    my $COMMANDOUT = `/usr/bin/lscpu`;
+    print $COMMANDOUT;
 ?>
